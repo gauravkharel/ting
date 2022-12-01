@@ -1,10 +1,3 @@
-/*
-* We created blant routes with express 
-and, now it is imported to the server 
-and using /api to access the routes
-
-next thing is middleware we're learning
-*/
 import {Router} from "express"
 
 const router = Router();
