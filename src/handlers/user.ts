@@ -20,17 +20,17 @@ export const signin = async (req, res) => {
     where: { id: req.body.username }
   })
 
-
+  console.log(user)
 // TypeError: Cannot read properties of null (reading 'password')
   const isValid = await comparePasswords(req.body.password, user.password)
-
+  
   if (!isValid) {
     res.status(401)
     res.send("Invalid username or password")
     return;
   }
 
-  const token = createJWT(user)
+  const token = createJWT(user);
   res.json({ token });
-}
+};
 
